@@ -39,8 +39,8 @@ module SessionsHelper
     user == current_user
   end
 
-  def redirect_back_or(default)
-    redirect_to(session[:return_to] || default)
+  def redirect_back_or
+    redirect_to(session[:return_to] || root_url)
     session.delete(:return_to)
   end
 
